@@ -1,9 +1,9 @@
 import React from "react";
-import { List, ListItem } from "../List";
+import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 import "./style.css";
 
-function Book({ title, subtitle, author, link, image, description, Button}) {
+function Book({ title, subtitle, authors, link, image, description, Button}) {
   return (
     <ListItem>
       <Row className="flex-wrap-reverse">
@@ -12,7 +12,7 @@ function Book({ title, subtitle, author, link, image, description, Button}) {
         </Col>
         <Col size="md-4">
           <div className="btn-container">
-            <a className="btn btn-light" target="_blank" rel="noopener norefferer" href={link}>
+            <a className="btn btn-light" target="_blank" rel="noopener noreferrer" href={link}>
               View
             </a>
             <Button />
@@ -21,12 +21,15 @@ function Book({ title, subtitle, author, link, image, description, Button}) {
       </Row>
       <Row>
         <Col size="md-6">
-          <p className="font-italic small"> By {author}</p>
+          <p className="font-italic small"> By {authors}</p>
         </Col>
       </Row>
       <Row>
         <Col size="12 md-2 sm-4">
           <img className="img-thumbnail img-fluid w-100" src={image} alt={title} />
+        </Col>
+        <Col size="12 sm-8 md-10">
+          <p>{description}</p>
         </Col>
       </Row>
     </ListItem>

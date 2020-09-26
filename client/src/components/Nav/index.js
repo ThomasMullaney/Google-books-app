@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-class Nav extends components {
+class Nav extends Component {
     state = {
         open: false,
         width: window.innerWidth
@@ -26,7 +26,7 @@ class Nav extends components {
         window.addEventListener("resize", this.updateWidth);
     }
 
-    componentWillUnMount() {
+    componentWillUnmount() {
         window.addEventListener("resize", this.updateWidth);
     }
 
@@ -42,7 +42,7 @@ class Nav extends components {
                     data-toggle="collapse"
                     data-target="#navbarNav"
                     aria-controls="navbarNav"
-                    aria-expand="false"
+                    aria-expanded="false"
                     aria-label="Toggle navigation"
                     >
                         <span className="navbar-toggler-icon" />

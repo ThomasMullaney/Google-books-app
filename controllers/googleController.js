@@ -10,9 +10,9 @@ module.exports = {
   findAll: function(req, res) {
     const { query: params } = req;
 
-    const url = `https://www.googleapis.com/books/v1/volumes?q=${params.q}`;
-    console.log("params", params);
-    console.log("URL", url);
+    // const url = `https://www.googleapis.com/books/v1/volumes?q=${params.q}`;
+    // console.log("params", params);
+    // console.log("URL", url);
 
     axios
       .get("https://www.googleapis.com/books/v1/volumes", {

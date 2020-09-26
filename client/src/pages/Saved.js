@@ -42,6 +42,37 @@ class Saved extends Component {
             </Jumbotron>
           </Col>
         </Row>
+        <Row>
+          <Col size="md-12">
+            <Card title="saved-books" icon="download">
+              {this.state.books.length ? (
+                <List>
+                  {this.state.books.map(book => (
+                    <Book
+                      key={book._id}
+                      title={book.title}
+                      link={book.link}
+                      author={book.author.join(", ")}
+                      description={book.description}
+                      image={book.image}
+                      Button={() => (
+                        <button
+                          onClick={() => this.handleBookDelete(book._id)}
+                          className="btn btn-danger ml-2"
+                          >
+                            Delete
+                          </button>
+                      )}
+                      />
+                  ))}
+                </List>
+              ) : (
+                <h2 className="text-center">No Saved Books</h2>
+              )}
+            </Card>
+          </Col>
+        </Row>
+        <Footer />
       </Container>
     );
   }
