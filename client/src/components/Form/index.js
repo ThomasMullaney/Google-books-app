@@ -8,7 +8,7 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
           Book
         </label>
         <input 
-          className="form control"
+          className="form-control"
           id="title"
           type="text"
           value={q}

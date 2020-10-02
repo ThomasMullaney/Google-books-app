@@ -8,12 +8,7 @@ const db = require("../models");
 // It also makes sure that the books returned from the API all contain a title, author, link, description, and image
 module.exports = {
   findAll: function(req, res) {
-    const { query: params } = req;
-
-    // const url = `https://www.googleapis.com/books/v1/volumes?q=${params.q}`;
-    // console.log("params", params);
-    // console.log("URL", url);
-
+    const {query: params} = req;
     axios
       .get("https://www.googleapis.com/books/v1/volumes", {
         params
@@ -36,7 +31,15 @@ module.exports = {
           )
         )
       )
-      .then(books => res.json(books))
-      .catch(err => res.status(422).json(err));
+        .then(books => res.json(books))
+        .catch(err => res.status(422).json(err))
   }
-};
+
+  // search: function(req, res) {
+  //   const { query } = req;
+   
+  //   axios.get(`https://www.googleapis.com/books/v1/volumes?q=Holes`).then(res=> console.log(res))
+    
+  //   // axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`).then(res=> console.log(res))
+  };
+

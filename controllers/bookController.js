@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the bookController
 module.exports = {
   findAll: function(req, res) {
-    console.log("req.query", req.query);
+    // console.log("req.query", req.query);
     db.Book.find(req.query)
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
