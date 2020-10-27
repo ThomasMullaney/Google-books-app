@@ -9,6 +9,11 @@ const db = require("../models");
 module.exports = {
   findAll: function(req, res) {
     const {query: params} = req;
+    
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${params.q}`;
+    console.log("params", params);
+    console.log("URL", url);
+
     axios
       .get("https://www.googleapis.com/books/v1/volumes", {
         params
@@ -35,11 +40,5 @@ module.exports = {
         .catch(err => res.status(422).json(err))
   }
 
-  // search: function(req, res) {
-  //   const { query } = req;
-   
-  //   axios.get(`https://www.googleapis.com/books/v1/volumes?q=Holes`).then(res=> console.log(res))
-    
-  //   // axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`).then(res=> console.log(res))
   };
 

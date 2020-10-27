@@ -1,30 +1,29 @@
 import axios from "axios";
-const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
+// const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
 
 export default {
   // Gets books from the Google API
-  // search: function(query) {
-  //   return axios.get("/api/google" + query);
-  // },
 
   getBooks: function(q){
     console.log("Get Books of utils/API")
     return axios.get("/api/google", {params: { q: "title:" + q} })
   },
 
-  // search: function(q) {
-  //  return axios.get("/api/google", { params: {q:"title:" +  q}})
-  // },
+
   // Gets all saved books
-  // getSavedBooks: function() {
-  //   return axios.get("/api/books");
-  // },
+  getSavedBooks: function() {
+    return axios.get("/api/books");
+  },
+
   // Deletes the saved book with the given id
   deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/books/", + id);
   },
+
   // Saves an book to the database
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
-  }
+  },
+
+
 };
