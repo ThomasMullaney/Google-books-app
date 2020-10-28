@@ -1,12 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-
-
-
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -19,19 +15,13 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { 
-useCreateIndex: true,
-useNewUrlParser: true,
-useUnifiedTopology: true,
- });
-
+// connect to heroku Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+});
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

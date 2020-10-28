@@ -12,13 +12,13 @@ class Home extends Component {
   state = {
     books: [],
     q: "",
-    message: "Search For A Book To Begin!"
+    message: "Search For A Book To Begin!",
   };
 
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -26,13 +26,13 @@ class Home extends Component {
     API.getBooks(this.state.q)
       .then(res =>
         this.setState({
-          books: res.data
+          books: res.data,
         })
       )
       .catch(() =>
         this.setState({
           books: [],
-          message: "No New Books Found, Try a Different Query"
+          message: "No New Books Found, Try a Different Query",
         })
       );
   };
@@ -52,7 +52,7 @@ class Home extends Component {
       link: book.volumeInfo.infoLink,
       authors: book.volumeInfo.authors,
       description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks.thumbnail
+      image: book.volumeInfo.imageLinks.thumbnail,
     }).then(() => this.getBooks());
   };
 
@@ -65,7 +65,9 @@ class Home extends Component {
               <h1 className="text-center">
                 <strong>(React) Google Books Search</strong>
               </h1>
-              <h2 className="text-center">Search for and Save Books of Interest.</h2>
+              <h2 className="text-center">
+                Search for and Save Books of Interest.
+              </h2>
             </Jumbotron>
           </Col>
           <Col size="md-12">
@@ -83,9 +85,10 @@ class Home extends Component {
             <Card title="Results">
               {this.state.books.length ? (
                 <List>
+                  {console.log("this.state.books ------>", this.state.books)}
                   {this.state.books.map(book => (
                     <Book
-                      key={book.id}
+                      key={book.id} 
                       title={book.volumeInfo.title}
                       subtitle={book.volumeInfo.subtitle}
                       link={book.volumeInfo.infoLink}
