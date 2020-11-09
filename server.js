@@ -17,8 +17,10 @@ app.use(routes);
 
 // connect to heroku Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
-  useCreateIndex: true,
   useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
 });
 
 // Start the API server
