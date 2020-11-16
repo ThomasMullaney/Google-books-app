@@ -29,7 +29,9 @@ This is an employee directory application.</p>
 </div>
 
 ![Screenshot of application demo](img/FrontPageCapture.PNG)
+<br>
 ![Screenshot of application demo](img/resultsCapture.PNG)
+<br>
 ![Screenshot of application demo](img/savedCapture.PNG)
 
 ## Description:
