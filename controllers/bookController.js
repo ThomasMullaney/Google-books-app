@@ -26,7 +26,6 @@ module.exports = {
   remove: function (req, res) {
     console.log("Hit Delete Route")
     db.Book.findById(req.params.id)
-      .then(console.log("Hit Delete Route"))
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
