@@ -57,6 +57,16 @@ This is an employee directory application.</p>
 
 ### Application is CRUD, users can search for books, post them to their personal reading list, and delete them from the reading list when finished.
 
+## Technologies:
+<ul>
+<li>HTML, CSS, Bootstrap</li>
+<li>Javascript, jQuery</li>
+<li>MongoDB</li>
+<li>node.js, Express, Sequlize, dotenv, Passport, Bcrypt</li>
+<li>Github, Heroku</li>
+</ul>
+
+
 ## License:
 
 ### [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
