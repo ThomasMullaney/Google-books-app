@@ -14,7 +14,7 @@
 <br>
 </div>
 <p align="center"><font size="3">
-This is an employee directory application.</p>
+This is an book search and reading list application.</p>
 <div align="center"><a name="menu"></a>
   <h4>
     <a href="https://github.com/ThomasMullaney/Google-books-app">
@@ -38,7 +38,7 @@ This is an employee directory application.</p>
 
 ## Description:
 
-### A MERN stack application that allows users to search for books using a Google API.
+### A MERN stack application that allows users to search for books, view details like author, release year and summary, and save interseting books to a personalized reading list.
 
 ## Table of Contents:
 
